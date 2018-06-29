@@ -34,8 +34,7 @@ namespace SampleQueueListeningStatefulService
 
             // Also, define a QueueName:
             //string serviceBusQueueName = CloudConfigurationManager.GetSetting("QueueName");
-            string serviceBusQueueName = null; //using entity path.
-                                               //alternative: CloudConfigurationManager.GetSetting("QueueName");
+            string serviceBusQueueName = CloudConfigurationManager.GetSetting("QueueName");
             yield return new ServiceReplicaListener(context => new ServiceBusQueueCommunicationListener(
 				new Handler(this)
 				, context

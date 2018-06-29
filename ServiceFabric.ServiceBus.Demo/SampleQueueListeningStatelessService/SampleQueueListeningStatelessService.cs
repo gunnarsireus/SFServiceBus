@@ -28,8 +28,7 @@ namespace SampleQueueListeningStatelessService
 			// and "Microsoft.ServiceBus.ConnectionString.Send"
 
 			// Also, define a QueueName:
-		    string serviceBusQueueName = null; //using entity path.
-            //alternative: CloudConfigurationManager.GetSetting("QueueName");
+		    string serviceBusQueueName = CloudConfigurationManager.GetSetting("QueueName");
 		    Action<string> logAction = log => ServiceEventSource.Current.ServiceMessage(this, log);
 		    yield return new ServiceInstanceListener(context => new ServiceBusQueueCommunicationListener(
 				new Handler(logAction)
