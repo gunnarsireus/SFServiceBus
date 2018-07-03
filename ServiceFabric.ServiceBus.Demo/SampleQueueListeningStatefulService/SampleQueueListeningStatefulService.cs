@@ -39,7 +39,7 @@ namespace SampleQueueListeningStatefulService
 				new Handler(this)
 				, context
 				, serviceBusQueueName
-                , requireSessions: true), "StatefulService-ServiceBusSubscriptionListener");
+                , requireSessions: true), "StatefulService-ServiceBusQueueListener");
 		}
 
 		
