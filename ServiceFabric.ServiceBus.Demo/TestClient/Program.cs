@@ -148,22 +148,22 @@ namespace TestClient
 
                     case ConsoleKey.D4:
                     case ConsoleKey.NumPad4:
-                        SendTestMessageToQueue(new Uri("fabric:/MyServiceFabricApp/SampleQueueListeningStatefulService"), QueueNameStateful, true, true);
+                        SendTestMessageToQueue(new Uri("fabric:/SFServiceBus/SampleQueueListeningStatefulService"), QueueNameStateful, true, true);
                         break;
 
                     case ConsoleKey.D5:
                     case ConsoleKey.NumPad5:
-                        SendTestMessageToQueue(new Uri("fabric:/MyServiceFabricApp/SampleQueueListeningStatelessService"), QueueNameStateless, false);
+                        SendTestMessageToQueue(new Uri("fabric:/SFServiceBus/SampleQueueListeningStatelessService"), QueueNameStateless, false);
                         break;
 
                     case ConsoleKey.D6:
                     case ConsoleKey.NumPad6:
-                        SendTestMessageToTopic(new Uri("fabric:/MyServiceFabricApp/SampleSubscriptionListeningStatefulService"), TopicNameStateful, true, true);
+                        SendTestMessageToTopic(new Uri("fabric:/SFServiceBus/SampleSubscriptionListeningStatefulService"), TopicNameStateful, true, true);
                         break;
 
                     case ConsoleKey.D7:
                     case ConsoleKey.NumPad7:
-                        SendTestMessageToTopic(new Uri("fabric:/MyServiceFabricApp/SampleSubscriptionListeningStatelessService"), TopicNameStateless, false);
+                        SendTestMessageToTopic(new Uri("fabric:/SFServiceBus/SampleSubscriptionListeningStatelessService"), TopicNameStateless, false);
                         break;
 
                     case ConsoleKey.L:
@@ -194,7 +194,7 @@ namespace TestClient
 
             td.Authorization.Add(new SharedAccessAuthorizationRule("SendKey", sendKey, new[] { AccessRights.Send }));
             td.Authorization.Add(new SharedAccessAuthorizationRule("ReceiveKey", receiveKey, new[] { AccessRights.Listen }));
-
+            td.EnablePartitioning = true;
             namespaceManager.CreateTopic(td);
             Console.WriteLine($"Created Topic '{topicName}'.");
 
@@ -263,6 +263,7 @@ namespace TestClient
             qd.Authorization.Add(new SharedAccessAuthorizationRule("SendKey", sendKey, new[] { AccessRights.Send }));
             qd.Authorization.Add(new SharedAccessAuthorizationRule("ReceiveKey", receiveKey, new[] { AccessRights.Listen }));
             qd.RequiresSession = requireSessions;
+            qd.EnablePartitioning = true;
 
             namespaceManager.CreateQueue(qd);
             Console.WriteLine($"Created queue '{queueName}'.");

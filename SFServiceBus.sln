@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26510.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "MyServiceFabricApp", "ServiceFabric.ServiceBus.Demo\MyServiceFabricApp\MyServiceFabricApp.sfproj", "{2CCC9939-69FE-4B46-9DB7-4EC86B476012}"
+Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "SFServiceBus", "ServiceFabric.ServiceBus.Demo\MyServiceFabricApp\SFServiceBus.sfproj", "{2CCC9939-69FE-4B46-9DB7-4EC86B476012}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleQueueListeningStatelessService", "ServiceFabric.ServiceBus.Demo\SampleQueueListeningStatelessService\SampleQueueListeningStatelessService.csproj", "{54793E75-80D0-4BFA-8AB6-82E3D2884F80}"
 EndProject
@@ -66,5 +66,8 @@ Global
 		{12818388-137F-4FC7-85E8-71D99CD3E06B} = {C84253AB-753A-4994-8B6D-75F140BFD1B6}
 		{B092DD86-2104-4531-9EAB-BFB10B1E0242} = {F805B4C4-56C9-4333-BCD7-DC6A0203F3B9}
 		{6A6887CB-3C2E-4652-9D69-B7C0D9A1B397} = {F805B4C4-56C9-4333-BCD7-DC6A0203F3B9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7620EC4-B9EF-4E29-B027-EFB6517F26AB}
 	EndGlobalSection
 EndGlobal

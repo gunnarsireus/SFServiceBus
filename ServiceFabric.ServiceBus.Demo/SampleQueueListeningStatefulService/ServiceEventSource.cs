@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SampleQueueListeningStatefulService
 {
-	[EventSource(Name = "Xpirit-MyServiceFabricApp-SampleQueueListeningStatefulService")]
+	[EventSource(Name = "Xpirit-SFServiceBus-SampleQueueListeningStatefulService")]
 	internal sealed class ServiceEventSource : EventSource
 	{
 		public static ServiceEventSource Current = new ServiceEventSource();

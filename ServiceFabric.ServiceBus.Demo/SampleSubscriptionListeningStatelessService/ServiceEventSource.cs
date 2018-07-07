@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SampleSubscriptionListeningStatelessService
 {
-	[EventSource(Name = "Xpirit-MyServiceFabricApp-SampleSubscriptionListeningStatelessService")]
+	[EventSource(Name = "Xpirit-SFServiceBus-SampleSubscriptionListeningStatelessService")]
 	internal sealed class ServiceEventSource : EventSource
 	{
 		public static ServiceEventSource Current = new ServiceEventSource();
